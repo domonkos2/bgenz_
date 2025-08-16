@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bgenz — Minecraft Gen Server</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-neutral-950 text-white min-h-screen flex flex-col">
+  <!-- Background -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute inset-0"
+      style="background-image: radial-gradient(ellipse at top, rgba(16,185,129,0.2), rgba(23,23,23,1) 60%);"></div>
+    <div class="absolute inset-0"
+      style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:32px 32px; background-position:-1px -1px;"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-40 backdrop-blur border-b border-white/10 bg-neutral-950/60">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="relative h-8 w-8">
+          <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600"></div>
+          <div class="absolute inset-0 rounded-lg bg-black/30"></div>
+          <div class="absolute -bottom-1 inset-x-0 h-1 rounded-b-lg bg-black/60"></div>
+        </div>
+        <span class="font-bold text-lg tracking-wide">Bgenz</span>
+        <span class="ml-2 bg-emerald-600/80 px-2 py-1 rounded-lg text-xs">Gen</span>
+      </div>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="#how" class="px-3 py-1 rounded-xl hover:bg-white/5">How it works</a>
+        <a href="#rules" class="px-3 py-1 rounded-xl hover:bg-white/5">Rules</a>
+        <a href="#leaderboard" class="px-3 py-1 rounded-xl hover:bg-white/5">Leaderboard</a>
+        <a href="#join" class="px-3 py-1 rounded-xl hover:bg-white/5">Join</a>
+        <a href="https://discord.gg/qTj5jDZPre" target="_blank" class="px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20">Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative">
+    <div class="mx-auto max-w-7xl px-4 pt-14 pb-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Bgenz <span class="text-emerald-400">Gen</span> Server
+        </h1>
+        <p class="mt-4 text-neutral-300 leading-relaxed">
+          Grind, generate, and climb the ranks. Bgenz is a Minecraft
+          <span class="text-emerald-300 font-semibold">Gen</span> server focused on smooth economy, fair PvP, and fast-paced progression.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <button onclick="copyIP()" class="px-4 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500">
+            <i data-lucide="copy" class="inline h-4 w-4 mr-2"></i>
+            <span id="copy-btn-text">Copy IP: bgenz.minehut.gg</span>
+          </button>
+          <a href="https://discord.gg/qTj5jDZPre" target="_blank" class="px-4 py-2 rounded-2xl border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/10">
+            <i data-lucide="external-link" class="inline h-4 w-4 mr-2"></i> Join Discord
+          </a>
+          <span class="bg-white/10 px-2 py-1 rounded-lg text-xs">Version 1.21+</span>
+        </div>
+        <div class="mt-6 flex items-center gap-3 text-sm text-neutral-300">
+          <span class="inline-flex items-center">
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse mr-2"></span>
+            <strong class="text-white mr-1">Online</strong> ~ 10+ players
+          </span>
+          <span class="opacity-60">•</span>
+          <span class="inline-flex items-center"><i data-lucide="zap" class="h-4 w-4 mr-1"></i> Low latency EU</span>
+        </div>
+      </div>
+      <div>
+        <div class="rounded-xl border border-white/10 bg-black/40 p-6 text-center">
+          <p class="text-sm text-neutral-300">Drop your spawn screenshot here</p>
+          <p class="text-xs text-neutral-400">(replace this card with an image)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="mx-auto max-w-7xl px-4 py-14">
+    <h2 class="text-3xl font-bold flex items-center"><i data-lucide="sparkles" class="h-6 w-6 mr-2 text-emerald-400"></i> How Gen works</h2>
+    <p class="text-neutral-300 mt-2">Mine, place, and generate value. Upgrade your gens, sell to the economy, and duel for control.</p>
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold flex items-center gap-2"><i data-lucide="server" class="h-5 w-5"></i> Smooth economy</h3>
+        <p class="text-neutral-300 mt-2">Balanced shop prices, sell wands, and auto-sell boosters keep the grind satisfying—never stale.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold flex items-center gap-2"><i data-lucide="sword" class="h-5 w-5"></i> Fair PvP</h3>
+        <p class="text-neutral-300 mt-2">No pay-to-win kits. Enchants are progression-based and combat is tuned for skillful fights.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">
+        <h3 class="font-semibold flex items-center gap-2"><i data-lucide="shield" class="h-5 w-5"></i> Anti-cheat</h3>
+        <p class="text-neutral-300 mt-2">Modern anticheat + active staff keep the experience clean and competitive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="bg-white/5 border-y border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-14">
+      <h2 class="text-3xl font-bold mb-4">Rules</h2>
+      <ul class="space-y-2 text-neutral-300">
+        <li>1. No cheating, dupes, or automation exploits.</li>
+        <li>2. Respect players and staff; harassment and slurs are not tolerated.</li>
+        <li>3. No IRL trading or cross-server advertising.</li>
+        <li>4. Keep chat clean; English or HU preferred.</li>
+        <li>5. Use common sense—if you think it might be bannable, don't do it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard" class="mx-auto max-w-7xl px-4 py-14">
+    <h2 class="text-3xl font-bold flex items-center mb-6"><i data-lucide="trophy" class="h-6 w-6 mr-2 text-emerald-400"></i> Weekly Leaderboard</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">1. itsFrost — 1,280 gens</div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">2. BgenzFan — 1,165 gens</div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">3. EnderKai — 1,092 gens</div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">4. Z3phyr — 980 gens</div>
+      <div class="rounded-2xl border border-white/10 p-5 bg-white/5">5. HexMiner — 905 gens</div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="bg-white/5 border-y border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-14">
+      <h2 class="text-3xl font-bold mb-6">Join the server</h2>
+      <ul class="text-neutral-300 space-y-2">
+        <li>1. Open Minecraft Java Edition (version 1.21+)</li>
+        <li>2. Multiplayer → Add Server</li>
+        <li>3. Server address: <strong>bgenz.minehut.gg</strong></li>
+        <li>4. Join and run /register if prompted</li>
+      </ul>
+      <div class="mt-6 flex gap-3">
+        <button onclick="copyIP()" class="px-4 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500">
+          <i data-lucide="copy" class="h-4 w-4 mr-2 inline"></i>
+          <span id="copy-btn-text-2">bgenz.minehut.gg</span>
+        </button>
+        <a href="https://discord.gg/qTj5jDZPre" target="_blank" class="px-4 py-2 rounded-2xl border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/10">
+          <i data-lucide="external-link" class="h-4 w-4 mr-2 inline"></i> Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mx-auto max-w-7xl px-4 py-10 text-sm text-neutral-400">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> Bgenz. Unofficial fan site template.</p>
+      <a href="https://discord.gg/qTj5jDZPre" target="_blank" class="underline decoration-emerald-500 hover:text-white">Discord</a>
+    </div>
+  </footer>
+
+  <!-- JS for copy + icons -->
+  <script>
+    function copyIP() {
+      navigator.clipboard.writeText("bgenz.minehut.gg");
+      document.querySelectorAll("#copy-btn-text, #copy-btn-text-2").forEach(el => el.textContent = "Copied!");
+      setTimeout(() => {
+        document.querySelectorAll("#copy-btn-text, #copy-btn-text-2").forEach(el => el.textContent = "bgenz.minehut.gg");
+      }, 1600);
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
